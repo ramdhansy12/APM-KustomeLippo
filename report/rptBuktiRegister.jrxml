@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="780" columnWidth="198" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="c1e97af4-9c70-4d31-8cf4-7041acc02fd8">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="100"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="namars" class="java.lang.String"/>
+	<parameter name="alamatrs" class="java.lang.String"/>
+	<parameter name="kotars" class="java.lang.String"/>
+	<parameter name="propinsirs" class="java.lang.String"/>
+	<parameter name="kontakrs" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,pasien.no_tlp, reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,pasien.umur,poliklinik.nm_poli,
+reg_periksa.p_jawab,reg_periksa.almt_pj,reg_periksa.hubunganpj,reg_periksa.biaya_reg,
+reg_periksa.stts_daftar,penjab.png_jawab 
+from reg_periksa inner join dokter inner join pasien inner join poliklinik inner join penjab
+on reg_periksa.kd_dokter=dokter.kd_dokter and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_pj=penjab.kd_pj and reg_periksa.kd_poli=poliklinik.kd_poli]]>
+	</queryString>
+	<field name="no_reg" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_rawat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_registrasi" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jam_reg" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_tlp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_dokter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_dokter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_rkm_medis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_pasien" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="umur" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_poli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="p_jawab" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="almt_pj" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hubunganpj" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="biaya_reg" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stts_daftar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="png_jawab" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="752" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="51" width="199" height="11" uuid="86b666f3-dcee-4237-a137-46684c923067"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nm_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="63" width="199" height="11" uuid="9e5c4ff5-42a8-42a3-b046-15c32e3409cc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_rkm_medis}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="10" width="199" height="1" forecolor="#006666" uuid="7bf7583f-93d4-43e8-961d-8e32346934b9"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="-5" width="199" height="15" uuid="5a46b99f-8f42-4a20-9190-d098eee664ea"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="74" width="49" height="10" uuid="ed1aa83a-4b2b-438f-9ea2-37c8505df092"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="74" width="149" height="10" uuid="9dbe5438-3173-47df-86ab-a4bdb35c13e0"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{jk}.replaceAll("L","Laki-Laki").replaceAll("P","Perempuan")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="42" height="10" uuid="5f791802-b25b-426d-a5cd-f821da1ce507"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="40" width="157" height="10" uuid="252a08fb-eab5-4a38-b28f-072ae67add4d"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{tgl_registrasi}+" "+$F{jam_reg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="84" width="36" height="10" uuid="f80b65d4-d051-4152-8939-c3d3193f56a5"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Umur]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="84" width="150" height="10" uuid="b1faa38e-c870-48e5-a75f-81a034f124a4"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{umur}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="18" width="42" height="15" uuid="a3cce604-d0f8-4af9-aea1-546ea4f408a6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="10"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[No. Antri]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="11" width="157" height="29" uuid="f4e95b41-b505-40ef-bd03-2ffb9c8c0f34"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="20" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_reg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="104" width="110" height="11" uuid="3a86ff74-a6f8-4884-85a7-6f6e7bda12a8"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{p_jawab}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="104" width="50" height="11" uuid="1c804ca5-97a4-4e99-baf4-aaf54a9a156d"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Penanggung]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="94" width="50" height="10" uuid="4886880d-0f9c-4e49-ae19-8ecbe6fb0747"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cara Bayar]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="94" width="149" height="10" uuid="2dad8117-d240-4ddd-95ee-e6fc584c5c3a"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{png_jawab}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="464" width="157" height="13" uuid="23c2ef1b-da01-4d5a-9575-d066eeb9c65d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nm_dokter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="403" width="195" height="22" uuid="456db33b-c4e0-4820-a076-13a444c3dd93"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="7" isItalic="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[..........................................................................................
+Potong disini untuk Poli]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="708" width="199" height="39" uuid="13f2e361-6281-4385-9c6c-d3ea02150bc3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Saat pasien 2 kali dipanggil melalui pengeras suara tidak ada, maka akan dilewati minimal 2 pasien, dan melakukan konfirmasi ulang di Nurse Station Poliklinik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="400" width="199" height="12" uuid="13db0142-89be-4f41-a737-8a1db352e3bc"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Harap dibawa pasien sampai pelayanan Selesai :)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-2" y="464" width="41" height="13" uuid="2de2bfc5-009f-4913-a196-dde794be3c1c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Dokter : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="51" y="126" width="148" height="14" uuid="926a382e-65ed-40d0-8da7-6f91c4d94e8a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nm_poli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="126" width="50" height="14" uuid="7c1b7a3d-cb8c-41df-8351-455ffe05311b"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tujuan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-3" y="564" width="200" height="16" uuid="e8a82459-a8a1-454a-973e-888be0da702e"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="643" width="87" height="16" uuid="32d418f1-d034-4f16-b1d6-9fedffcd00a3"/>
+				<text><![CDATA[Suhu :       °C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-3" y="553" width="199" height="10" uuid="e4f22866-f742-4dc3-bb11-4ba85b2c5869"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Keluhan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="659" width="110" height="16" uuid="8fd2548d-216a-404b-a2f5-34f61175b57b"/>
+				<text><![CDATA[TB      :                cm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="643" width="110" height="16" uuid="5f332bf5-df05-437c-98e1-44f10fd70778"/>
+				<text><![CDATA[Tensi  :       	mmHg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="676" width="109" height="16" uuid="31d73e44-6d02-4fa3-ac95-52780dda5d6b"/>
+				<text><![CDATA[Nadi   :              /menit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="659" width="87" height="16" uuid="5ac416f9-f855-45d6-8f90-10ed0d6725aa"/>
+				<text><![CDATA[BB     :       Kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="676" width="87" height="16" uuid="60926adf-174b-4d33-a681-71d25c9c2e84"/>
+				<text><![CDATA[RR     :        /menit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="691" width="89" height="16" uuid="25b16df9-4fdf-416a-91c7-2cc788eff8a4"/>
+				<text><![CDATA[SpO2 :        %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="691" width="110" height="16" uuid="5d8e18e7-a751-4c42-ae56-1ba3217ee939"/>
+				<text><![CDATA[GCS   :       	E,V,M]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-3" y="443" width="199" height="10" uuid="27043fe6-b15c-4334-8bae-1b6e0eaa9c62"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nm_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-3" y="453" width="199" height="10" uuid="e900d53c-a14b-4750-a65b-5c57524c0522"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_rkm_medis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-3" y="478" width="55" height="12" uuid="98391ca7-00fc-457a-ba5d-95da568bdc94"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="52" y="478" width="144" height="13" uuid="d63805ac-b4d7-4698-863d-91b91c8889d0"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{jk}.replaceAll("L","Laki-Laki").replaceAll("P","Perempuan")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="430" width="38" height="10" uuid="8b7fac46-547a-4a67-a271-761ca8d0ad00"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="39" y="429" width="157" height="14" uuid="1b9c4929-8d90-4f96-b67d-c10768345c5a"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{tgl_registrasi}+" "+$F{jam_reg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-3" y="490" width="20" height="11" uuid="dfb7a4bf-4e52-4242-89d8-2ab154c5a81f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Umur]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="17" y="491" width="179" height="10" uuid="3dbd84c9-0e3d-4d67-937e-226e3305cd1c"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{umur}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-3" y="502" width="45" height="13" uuid="be64d694-a98d-4eed-9796-f221ea34dabe"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Penanggung]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="39" y="530" width="157" height="10" uuid="93159e2c-c2b7-4268-93b5-fbeccd83dce9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nm_poli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-3" y="529" width="42" height="12" uuid="ee717366-dcdb-4827-bb7f-4d71910382f8"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tujuan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-2" y="631" width="199" height="10" uuid="1beff683-6abb-4499-b883-4907b5d4fc4c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Anamnesa :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-3" y="579" width="200" height="16" uuid="4131ce67-a562-4fa6-8c74-19b08287c064"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-3" y="594" width="200" height="16" uuid="10f29f4d-81c9-4a0d-a76f-3b9b2358b172"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="51" y="115" width="149" height="11" uuid="f2956f46-c8f0-41e6-8253-ea747650f6f9"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{nm_dokter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="115" width="50" height="11" uuid="315162b6-34b5-40e5-af34-0f6cb27c5ffd"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Dokter]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="516" width="156" height="13" uuid="f62a046d-c30b-4abe-a2f8-2e7a0b7480ba"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{png_jawab}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-3" y="516" width="42" height="13" uuid="5375cd20-4d9e-414c-b9cd-a8209c813e28"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cara Bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-3" y="609" width="200" height="16" uuid="fd4374e5-a268-49f4-8c0c-06f36b9b9059"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="104" width="38" height="11" uuid="f61b6e9c-87ef-4059-9aec-79a268da9003"/>
+				<textElement textAlignment="Left" verticalAlignment="Justified">
+					<font fontName="Tahoma" size="5"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["("+$F{hubunganpj}+")"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="503" width="110" height="11" uuid="cbce9af4-f3fc-42d3-8254-a496c12f0d46"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{p_jawab}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="503" width="42" height="11" uuid="596221ab-895b-4437-9de2-12a6e6df0946"/>
+				<textElement textAlignment="Left" verticalAlignment="Justified">
+					<font fontName="Tahoma" size="5"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["("+$F{hubunganpj}+")"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="739" width="199" height="10" uuid="1a8174f1-252f-45cb-8bef-6f59d1d9694c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8" isBold="true" isItalic="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Terima Kasih Atas Kunjunganya :)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="153" width="158" height="16" uuid="a7f1e467-645b-458f-87ab-ebcbe3045d6b"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="142" width="199" height="10" uuid="aa0df3f2-a579-47d7-b493-2c3122dd5979"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[RESUME MEDIS RAJAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="168" width="158" height="16" uuid="916f1d95-c4a9-4225-b503-bc3d0ba0b7de"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="229" width="158" height="16" uuid="4a6a8741-105e-4f3e-a397-59d76f7bd49f"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="244" width="158" height="16" uuid="d8909966-c940-4e5b-b2aa-826b2b2ab953"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="153" width="42" height="15" uuid="306bcfd8-4e32-44e4-8eef-b42c7c8fb72f"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Diagnosa :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="228" width="42" height="15" uuid="20bdfdf9-253d-4ce2-aad5-44ec2ad3e094"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tindakan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="296" width="37" height="10" uuid="103233d4-87a3-4f3c-8336-269ea64333ba"/>
+				<textElement textAlignment="Left" verticalAlignment="Justified">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cikarang, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="296" width="78" height="10" uuid="3edc444e-7e03-426c-bd93-a20b1fc19558"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_registrasi}.toLocalDate()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="306" width="167" height="10" uuid="e7d67cf0-cc6a-4e16-80c5-28f7649c587c"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Dokter Pemeriksa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="33" y="369" width="169" height="10" uuid="99c0fd3f-5c79-4f24-bb19-c55ab47679dc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["( "+$F{nm_dokter}+")"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="-4" width="198" height="16" uuid="d1f9e1d7-5b4c-456c-ade3-42ff71b65462"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="184" width="158" height="16" uuid="41afdca9-1f7d-410a-8672-70fa65b01882"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="202" width="158" height="16" uuid="715e58da-ba23-431a-875e-d13cc750aac9"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="259" width="158" height="16" uuid="93b67eba-60eb-4d96-99bc-a715a82541c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="41" y="274" width="158" height="16" uuid="92524036-fbb3-4eea-86e9-742e1075b847"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Tahoma" size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[_______________________________]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
