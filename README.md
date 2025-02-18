@@ -9,7 +9,7 @@
 
 ###
 
-<p align="left"># anjunganmandiriSEP<br># Anjungan Pasien Mandiri RS Indriati Boyolali (Adaptasi SIMRS Khanza)<br><br># Silahkan lakukan deploy, dan tempatkan pada folder utama SIMRS Khanza.<br><br># Tambahkan konfigurasi berikut pada setting.xml<br><entry key="URLFINGERPRINTBPJS">https://fp.bpjs-kesehatan.go.id/finger-rest/</entry><br><entry key="URLAPLIKASIFINGERPRINTBPJS">C:\Program Files (x86)\Aplikasi Sidik Jari BPJS Kesehatan\After.exe</entry><br><entry key="USERFINGERPRINTBPJS"></entry><br><entry key="PASSWORDFINGERPRINTBPJS"></entry><br>#<br><br># Tambahkan table pada database dengan file SQL di folder tambahan Table<br><br># Tambahkan lib yg ada pada folder tambahan lib<br><br># Anjungan ini menggunakan versi aplikasi FP BPJS v 2.0(harus login setiap akan rekan FP)</p>
+<br># Silahkan lakukan deploy, dan tempatkan pada folder utama SIMRS Khanza.<br><br># Tambahkan konfigurasi berikut pada setting.xml<br><entry key="URLFINGERPRINTBPJS">https://fp.bpjs-kesehatan.go.id/finger-rest/</entry><br><entry key="URLAPLIKASIFINGERPRINTBPJS">C:\Program Files (x86)\Aplikasi Sidik Jari BPJS Kesehatan\After.exe</entry><br><entry key="USERFINGERPRINTBPJS"></entry><br><entry key="PASSWORDFINGERPRINTBPJS"></entry><br>#<br><br># Tambahkan table pada database dengan file SQL di folder tambahan Table<br><br># Tambahkan lib yg ada pada folder tambahan lib<br><br># Anjungan ini menggunakan versi aplikasi FP BPJS v 2.0(harus login setiap akan rekan FP)</p>
 
 ###
 
